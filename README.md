@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gmail Threading Exercise
 
-## Getting Started
+The **Alation UX Engineer Intern design exercise**, done by **Brian Ngo**.
 
-First, run the development server:
+A redesign of Gmail's email threading experience, built as a working prototype in
+Next.js + React. Long, messy threads collapse into a triage-first timeline: a
+"needs you" view, branch/fork awareness, and per-message actions — so catching up
+on a 20-reply thread doesn't mean scrolling a linear stack of quoted text.
+
+See [`INITIAL-DESIGN.md`](./INITIAL-DESIGN.md) for the design writeup (users,
+problems, tradeoffs) that motivated the build.
+
+## Run it on your computer
+
+**Prerequisites:** [Node.js](https://nodejs.org) 20+ and npm.
 
 ```bash
+# from this directory (email-threading/)
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — the inbox opens; click a
+conversation to see the redesigned thread timeline.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `/` — inbox → thread timeline prototype
+- `/thread-demo` — standalone thread redesign demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Other commands
 
-## Learn More
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # eslint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 16 (App Router) · React 19 · TypeScript. No database — sample thread data
+lives in `lib/`.
