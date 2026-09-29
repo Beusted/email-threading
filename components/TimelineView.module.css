@@ -1,0 +1,13 @@
+.wrap {
+  position: relative;
+  margin: 0 auto;
+}
+
+.spine {
+  position: absolute;
+  left: 195px;
+  top: 12px;
+  bottom: 36px;
+  width: 2px;
+  background: var(--spine);
+}

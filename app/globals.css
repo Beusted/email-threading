@@ -1,0 +1,228 @@
+/* Reset + shared rules ported from the mockup's <helmet><style> block. */
+
+/*
+ * Theme tokens. Light values live on :root; the [data-theme="dark"] block
+ * overrides them with a warm-neutral dark palette that echoes the "paper"
+ * aesthetic. Both CSS Modules and the JS token map in lib/tokens.ts reference
+ * these variables, so inline styles track the active theme too. An inline
+ * script in app/layout.tsx sets data-theme before first paint (see the
+ * "preventing flash before hydration" guide) — light is the pre-paint default.
+ */
+:root {
+  color-scheme: light;
+
+  --paper: #efede8;
+  --ink: #1f1d1a;
+  --ink2: #34312c;
+  --ink3: #4a463f;
+  --ink4: #3a3732;
+  --ink5: #2a2723;
+  --card: #ffffff;
+  --line: #ece9e3;
+  --line-soft: #f1efe9;
+  --border: #ddd9d1;
+  --border-soft: #e6e2da;
+  --border-strong: #bdb7ac;
+  --border-dash: #cfcac0;
+  --muted: #6b675f;
+  --muted2: #7c776d;
+  --sub: #5f5b53;
+  --field: #e4e1da;
+  --field-hover: #e6e3dc;
+  --chip-bg: #f3f1ec;
+  --chip-tile: #faf9f6;
+  --nav-active-bg: #dce4f5;
+  --nav-active-fg: #1e3f8f;
+  --unread-bg: #f1f5fd;
+  --unread-bg-hi: #f8faff;
+  --unread-border: #c9d6f2;
+  --chain-border: #a9bde8;
+  --spine: #e4e0d8;
+  --dot-idle: #b8b3a9;
+  --label-chip-bg: #eee9f8;
+  --label-chip-fg: #553a99;
+  --new-chip-bg: #e4ecfb;
+  --new-chip-fg: #1e3f8f;
+  --ask-bg: #fcefd9;
+  --ask-fg: #7a4a06;
+  --ask-fg2: #6a4005;
+  --ask-body-fg: #6a4005;
+  --old-badge-bg: #edebe6;
+  --old-badge-fg: #5f5b53;
+  --latest-badge-bg: #e1efe7;
+  --latest-badge-fg: #1f5e43;
+  --sparkle: #7a5ac8;
+  --label-green: #2f8a62;
+  --avatar-bg: #e2eafa;
+  --avatar-fg: #274c99;
+  --star: #e0a32e;
+  --star-idle: #c4bfb6;
+
+  --accent: #2b59c3;
+  --accent-strong: #1e3f8f;
+  --on-accent: #ffffff;
+
+  /* Inverse "primary" button: dark surface, light text. */
+  --btn-primary-bg: #1f1d1a;
+  --btn-primary-fg: #ffffff;
+
+  /* Demo status tokens: red = due soon, green = done, blue = reminder. */
+  --due-bg: #fbe4e0;
+  --due-fg: #a3341f;
+  --done-bg: #e1efe7;
+  --done-fg: #1f5e43;
+  --reminder-bg: #e4ecfb;
+  --reminder-fg: #1e3f8f;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper: #1c1a17;
+  --ink: #ede9e1;
+  --ink2: #e0dbd2;
+  --ink3: #cfc9bf;
+  --ink4: #c4beb4;
+  --ink5: #f1ede5;
+  --card: #262320;
+  --line: #322e29;
+  --line-soft: #2c2823;
+  --border: #3a362f;
+  --border-soft: #332f29;
+  --border-strong: #4a453d;
+  --border-dash: #4a453d;
+  --muted: #a39c90;
+  --muted2: #928b7f;
+  --sub: #b3ada1;
+  --field: #2e2a25;
+  --field-hover: #38332d;
+  --chip-bg: #2a2621;
+  --chip-tile: #242019;
+  --nav-active-bg: #2a3550;
+  --nav-active-fg: #aec2f0;
+  --unread-bg: #20293c;
+  --unread-bg-hi: #1e2536;
+  --unread-border: #33456b;
+  --chain-border: #3b4e77;
+  --spine: #35312a;
+  --dot-idle: #5c564c;
+  --label-chip-bg: #322a4a;
+  --label-chip-fg: #c9b8f0;
+  --new-chip-bg: #22304f;
+  --new-chip-fg: #aec2f0;
+  --ask-bg: #3a2e15;
+  --ask-fg: #e7b968;
+  --ask-fg2: #e0ae55;
+  --ask-body-fg: #e0ae55;
+  --old-badge-bg: #2e2a24;
+  --old-badge-fg: #b3ada1;
+  --latest-badge-bg: #17352a;
+  --latest-badge-fg: #7fcba6;
+  --sparkle: #a98be6;
+  --label-green: #4fb07e;
+  --avatar-bg: #2a3550;
+  --avatar-fg: #aec2f0;
+  --star: #f0b84a;
+  --star-idle: #5c564c;
+
+  --accent: #6e97e8;
+  --accent-strong: #9db8f2;
+  --on-accent: #ffffff;
+
+  --btn-primary-bg: #ede9e1;
+  --btn-primary-fg: #1c1a17;
+
+  --due-bg: #3a201b;
+  --due-fg: #f0a595;
+  --done-bg: #17352a;
+  --done-fg: #7fcba6;
+  --reminder-bg: #22304f;
+  --reminder-fg: #aec2f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-instrument-sans), system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--accent-strong);
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Icon stroke style. */
+.ic {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* Hover affordances. */
+.nav:hover {
+  background: var(--field);
+}
+.ghost:hover {
+  background: var(--paper);
+}
+.card:hover {
+  border-color: var(--border-strong);
+}
+.chip:hover {
+  background: var(--chip-bg);
+}
+.reply:hover {
+  background: var(--field-hover);
+}
+.tile:hover {
+  border-color: var(--border-strong);
+}
+
+.clamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.scroll {
+  scrollbar-width: thin;
+}
+
+/* Transient highlight when jumping to a message or sentence. */
+@keyframes demo-flash {
+  0% { background: var(--unread-bg-hi); box-shadow: 0 0 0 2px var(--accent); }
+  100% { background: transparent; box-shadow: 0 0 0 2px transparent; }
+}
+.flash {
+  animation: demo-flash 1.6s ease-out;
+}
+mark.flash {
+  border-radius: 3px;
+}

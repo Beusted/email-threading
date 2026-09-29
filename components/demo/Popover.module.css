@@ -1,0 +1,66 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 30;
+  min-width: 230px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.right {
+  left: auto;
+  right: 0;
+}
+
+/* Shared item styling for menu contents. */
+.menu :global(.menuitem) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink2);
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+.menu :global(.menuitem):hover {
+  background: var(--field);
+}
+.menu :global(.menuitem[data-on="true"]) {
+  background: var(--unread-bg);
+}
+.menu :global(.menuitem .row) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.menu :global(.menuitem .title) {
+  font-weight: 600;
+}
+.menu :global(.menuitem .when) {
+  color: var(--muted);
+  font-size: 13px;
+}
+.menu :global(.menuitem .sub) {
+  color: var(--muted);
+  font-size: 12px;
+}
+.menu :global(.menusep) {
+  height: 1px;
+  margin: 5px 6px;
+  background: var(--line);
+}

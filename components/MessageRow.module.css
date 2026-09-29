@@ -1,0 +1,253 @@
+/* ---- collapsed "earlier messages" head ---- */
+.collapsedRow {
+  position: relative;
+  display: flex;
+  margin-bottom: 12px;
+}
+.collapsedRail {
+  width: 170px;
+  flex-shrink: 0;
+  margin-right: 14px;
+  padding-top: 7px;
+  display: flex;
+  justify-content: flex-end;
+}
+.earlyBadge {
+  height: 28px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px dashed var(--border-dash);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--sub);
+}
+.collapsedDotCol {
+  width: 24px;
+  flex-shrink: 0;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+}
+.collapsedDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: var(--card);
+  border: 2px solid var(--dot-idle);
+}
+.collapsedCard {
+  flex-grow: 1;
+  min-width: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border: 1px dashed var(--border-dash);
+  border-radius: 12px;
+  background: var(--chip-tile);
+  font-size: 13px;
+  color: var(--ink3);
+  cursor: pointer;
+  text-align: left;
+}
+
+/* ---- date / new / event markers ---- */
+.dateRow {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 0 10px 220px;
+  font-size: 13px;
+}
+.dateTick {
+  position: absolute;
+  left: 190px;
+  top: 13px;
+  width: 12px;
+  height: 2px;
+  background: var(--dot-idle);
+}
+.dateLabel {
+  font-weight: 600;
+  color: var(--ink4);
+}
+.gapLabel {
+  color: var(--muted2);
+}
+
+.newRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 12px 220px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.newTick {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 208px;
+  height: 2px;
+}
+.newLine {
+  flex-grow: 1;
+  height: 2px;
+}
+
+.eventRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 12px 220px;
+  font-size: 13px;
+  color: var(--sub);
+}
+.eventTick {
+  position: absolute;
+  left: 191px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: var(--card);
+  border: 2px dashed var(--dot-idle);
+}
+
+/* ---- message row ---- */
+.row {
+  position: relative;
+  display: flex;
+  margin-bottom: 12px;
+  transition: opacity 200ms ease;
+}
+.dotCol {
+  width: 24px;
+  flex-shrink: 0;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.card {
+  flex-grow: 1;
+  min-width: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.parentChip {
+  margin: 10px 14px 0 14px;
+  height: 24px;
+  max-width: calc(100% - 28px);
+  padding: 0 10px 0 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--chip-bg);
+  font-size: 12px;
+  color: var(--ink3);
+  cursor: pointer;
+}
+.chipTopic {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--muted);
+}
+.pickBtn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 12px 16px 12px 14px;
+  cursor: pointer;
+}
+.headline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+.name {
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.askBadge {
+  height: 20px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+  background: var(--ask-bg);
+  color: var(--ask-fg);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.time {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.summary {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 0 38px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink2);
+}
+.failedWrap {
+  margin: 8px 0 0 38px;
+}
+.failedBody {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink2);
+}
+.failedNote {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted2);
+}
+.plainBody {
+  margin: 8px 0 0 38px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink2);
+}

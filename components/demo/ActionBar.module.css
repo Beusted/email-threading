@@ -1,0 +1,52 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+  color: var(--ink2);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--field);
+}
+
+.iconOnly {
+  padding: 7px 9px;
+}
+
+.on {
+  border-color: var(--accent);
+  background: var(--unread-bg);
+  color: var(--accent-strong);
+}
+
+.remind {
+  color: var(--ink2);
+}
+
+.reminderChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  border: 1px solid var(--unread-border);
+  border-radius: 9px;
+  background: var(--reminder-bg);
+  color: var(--reminder-fg);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
