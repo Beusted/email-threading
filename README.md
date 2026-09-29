@@ -1,6 +1,6 @@
 # Gmail Threading Exercise
 
-The **Alation UX Engineer Intern design exercise**, done by **Brian Ngo**.
+The **Alation UX Engineer design exercise**, done by **Brian Ngo**.
 
 A redesign of Gmail's email threading experience, built as a working prototype in
 Next.js + React. Long, messy threads collapse into a triage-first timeline: a
